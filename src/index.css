@@ -12,34 +12,14 @@
    2. Uncomment the @font-face block below and specify the format
    -------------------------------------------------------------------------- */
 @font-face {
-  font-family: 'Neo';
-  src: url('/fonts/Neo.ttf') format('truetype'),
-       url('/Neo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NeoFont';
-  src: url('/fonts/Neo.ttf') format('truetype'),
-       url('/Neo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'HackfestCustomFont';
-  src: url('/fonts/Neo.ttf') format('truetype'),
-       url('/Neo.ttf') format('truetype'),
-       local('Syne'), local('Impact'), sans-serif;
+  src: local('Orbitron'), local('Syne'), local('Impact'), sans-serif;
   font-weight: 400 900;
   font-display: swap;
 }
 
 :root {
-  --font-neo: 'Neo', 'NeoFont', sans-serif;
+  --font-neo: 'Orbitron', 'Syne', sans-serif;
   /* ------------------------------------------------------------------------
      1. COLOR SYSTEM — MARVEL MULTIVERSE × STARK INDUSTRIES
      ------------------------------------------------------------------------ */
@@ -1945,52 +1925,39 @@ textarea:focus {
   justify-content: center;
   text-align: center;
   padding: 0 1.5rem;
-  margin-top: calc(var(--nav-height, 72px) * 0.25);
+  width: 100%;
+  max-width: 1280px;
+  margin: calc(var(--nav-height, 72px) * 0.25) auto 0;
   pointer-events: none;
 }
 
-/* Prominent Centered HACKFEST 3.0 Title */
-.hero-cinematic-title {
-  font-family: var(--font-neo), 'Neo', 'NeoFont', sans-serif !important;
-  font-size: clamp(3.4rem, 10.5vw, 8.8rem);
+/* React Bits MaskedHeading Title Styling for HACKFEST 3.0 */
+.hero-cinematic-title-masked {
+  font-family: var(--font-heading), 'Orbitron', 'Syne', sans-serif !important;
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.45)) drop-shadow(0 4px 18px rgba(0, 0, 0, 0.95));
+}
+
+.hero-cinematic-title-masked .masked-heading__measure {
+  font-family: var(--font-heading), 'Orbitron', 'Syne', sans-serif !important;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-  line-height: 1.02;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow:
-    0 0 20px rgba(0, 255, 119, 0.75),
-    0 0 50px rgba(0, 217, 255, 0.55),
-    0 0 90px rgba(0, 255, 119, 0.3),
-    3px 3px 0px #000000,
-    0 8px 24px rgba(0, 0, 0, 0.95);
-  animation: heroCinematicTitleEntrance 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity, filter;
+  color: transparent;
 }
 
-.hero-cinematic-title .title-text-accent {
-  color: #00d9ff;
-  text-shadow:
-    0 0 25px rgba(0, 217, 255, 0.85),
-    0 0 60px rgba(0, 217, 255, 0.6),
-    3px 3px 0px #000000,
-    0 8px 24px rgba(0, 0, 0, 0.95);
+.hero-cinematic-title-masked .masked-heading__clip {
+  background: linear-gradient(135deg, #ffffff 0%, #00d9ff 50%, #f5c451 100%);
 }
 
-@keyframes heroCinematicTitleEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(32px) scale(0.96);
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
+.hero-cinematic-title-masked svg text {
+  font-family: 'Orbitron', 'Syne', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
 }
 
 /* Responsiveness */

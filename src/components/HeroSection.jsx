@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import MaskedHeading from './ui/MaskedHeading';
 import doomImg from '../assets/doom.png';
 import ironImg from '../assets/iron.png';
 
@@ -184,12 +185,29 @@ export default function HeroSection() {
       {/* 3. LAYER 3: Cinematic Atmospheric Vignette (Protects Text Contrast) */}
       <div className="hero-cinematic-atmosphere" aria-hidden="true" />
 
-      {/* 4. LAYER 4: Prominent Centered Title (HACKFEST 3.0 in Project Font) */}
+      {/* 4. LAYER 4: Prominent Centered Title (HACKFEST 3.0 via React Bits MaskedHeading) */}
       <div className="hero-center-stage">
-        <h1 className="hero-cinematic-title">
-          <span className="title-text-main">HACKFEST</span>
-          <span className="title-text-accent"> 3.0</span>
-        </h1>
+        <MaskedHeading
+          text="HACKFEST 3.0"
+          tag="h1"
+          mediaType="image"
+          src={ironSrc}
+          reveal="rise"
+          trigger="mount"
+          align="center"
+          weight={800}
+          tracking={0.06}
+          lineHeight={1.05}
+          textScale={0.08}
+          minFontSize={34}
+          maxFontSize={94}
+          fillScale={1.35}
+          parallax={16}
+          drift={10}
+          brightness={1.2}
+          saturation={1.3}
+          className="hero-cinematic-title-masked"
+        />
       </div>
     </section>
   );
