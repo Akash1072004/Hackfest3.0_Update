@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import MaskedHeading from './ui/MaskedHeading';
+import ParticleText from './ui/ParticleText';
 import doomImg from '../assets/doom.png';
 import ironImg from '../assets/iron.png';
 
@@ -185,29 +185,29 @@ export default function HeroSection() {
       {/* 3. LAYER 3: Cinematic Atmospheric Vignette (Protects Text Contrast) */}
       <div className="hero-cinematic-atmosphere" aria-hidden="true" />
 
-      {/* 4. LAYER 4: Prominent Centered Title (HACKFEST 3.0 via React Bits MaskedHeading) */}
+      {/* 4. LAYER 4: Prominent Centered Title (HACKFEST 3.0 via React Bits ParticleText) */}
       <div className="hero-center-stage">
-        <MaskedHeading
-          text="HACKFEST 3.0"
-          tag="h1"
-          mediaType="image"
-          src={ironSrc}
-          reveal="rise"
-          trigger="mount"
-          align="center"
-          weight={800}
-          tracking={0.06}
-          lineHeight={1.05}
-          textScale={0.08}
-          minFontSize={34}
-          maxFontSize={94}
-          fillScale={1.35}
-          parallax={16}
-          drift={10}
-          brightness={1.2}
-          saturation={1.3}
-          className="hero-cinematic-title-masked"
-        />
+        <h1 className="hero-particle-h1">
+          <ParticleText
+            text="HACKFEST 3.0"
+            fontFamily="Neo"
+            fontWeight={800}
+            fontSize="clamp(2.5rem, 7vw, 7rem)"
+            particleSize={2}
+            density={4}
+            color="#F4F7FB"
+            highlightColor="#00D9FF"
+            scatter={120}
+            gatherDuration={1500}
+            stagger={350}
+            pointerRepel={25}
+            repelRadius={110}
+            idleDrift={0.35}
+            trigger="mount"
+            glow={true}
+            className="hero-particle-text"
+          />
+        </h1>
       </div>
     </section>
   );

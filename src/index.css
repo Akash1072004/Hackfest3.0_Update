@@ -12,6 +12,14 @@
    2. Uncomment the @font-face block below and specify the format
    -------------------------------------------------------------------------- */
 @font-face {
+  font-family: 'Neo';
+  src: url('/fonts/Neo.ttf') format('truetype'),
+       url('/Neo.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'HackfestCustomFont';
   src: local('Orbitron'), local('Syne'), local('Impact'), sans-serif;
   font-weight: 400 900;
@@ -19,7 +27,7 @@
 }
 
 :root {
-  --font-neo: 'Orbitron', 'Syne', sans-serif;
+  --font-neo: 'Neo', 'Orbitron', 'Syne', sans-serif;
   /* ------------------------------------------------------------------------
      1. COLOR SYSTEM — MARVEL MULTIVERSE × STARK INDUSTRIES
      ------------------------------------------------------------------------ */
@@ -1924,40 +1932,30 @@ textarea:focus {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   width: 100%;
-  max-width: 1280px;
-  margin: calc(var(--nav-height, 72px) * 0.25) auto 0;
-  pointer-events: none;
+  max-width: 1400px;
+  height: clamp(140px, 20vw, 240px);
+  margin: calc(var(--nav-height, 72px) * 0.15) auto 0;
+  pointer-events: auto;
 }
 
-/* React Bits MaskedHeading Title Styling for HACKFEST 3.0 */
-.hero-cinematic-title-masked {
-  font-family: var(--font-heading), 'Orbitron', 'Syne', sans-serif !important;
+/* React Bits ParticleText Heading Container for HACKFEST 3.0 */
+.hero-particle-h1 {
   width: 100%;
-  max-width: 95vw;
-  margin: 0 auto;
-  pointer-events: none;
-  filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.45)) drop-shadow(0 4px 18px rgba(0, 0, 0, 0.95));
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-cinematic-title-masked .masked-heading__measure {
-  font-family: var(--font-heading), 'Orbitron', 'Syne', sans-serif !important;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: transparent;
-}
-
-.hero-cinematic-title-masked .masked-heading__clip {
-  background: linear-gradient(135deg, #ffffff 0%, #00d9ff 50%, #f5c451 100%);
-}
-
-.hero-cinematic-title-masked svg text {
-  font-family: 'Orbitron', 'Syne', sans-serif !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
+.hero-particle-text {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  pointer-events: auto;
 }
 
 /* Responsiveness */
